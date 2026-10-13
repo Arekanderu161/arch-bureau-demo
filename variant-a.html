@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>АДБ Проект-5 — архитектурное бюро · Вариант A «Монолит»</title>
+<meta name="description" content="ООО «АДБ Проект-5» — архитектурное бюро. Демо-сайт: частные дома, общественные здания, проектирование от эскиза до авторского надзора.">
+<meta name="theme-color" content="#0a0a0b">
+<script>try{var t=new URLSearchParams(location.search).get("theme")||localStorage.getItem("adb-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/a.css">
+</head>
+<body class="va">
+<a class="skip" href="#main">К содержанию</a>
+<header class="site-header" data-header>
+  <a class="brand" href="./">АДБ Проект-5 <small>архитектурное бюро</small></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#anatomy">Анатомия дома</a>
+    <a href="#projects">Проекты</a>
+    <a href="#process">Процесс</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+  <div class="header-tools">
+    <a class="chip chip-variant" href="variant-b.html"><span>Вариант</span> B</a>
+    <button class="chip theme-toggle" type="button" data-theme-toggle aria-label="Сменить тему">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" data-gl-host aria-labelledby="hero-title">
+    <canvas class="hero-gl" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-inner wrap">
+      <p class="eyebrow" data-reveal>ООО «АДБ Проект-5»</p>
+      <h1 id="hero-title" class="hero-title" data-split data-reveal>Архитектура, которая держит свет</h1>
+      <p class="hero-lead" data-reveal style="--d:.35s">Проектируем частные дома и общественные здания: от первого эскиза до авторского надзора на стройке.</p>
+      <div class="hero-actions" data-reveal style="--d:.5s">
+        <a class="btn" href="#anatomy">Анатомия дома <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Обсудить проект</a>
+      </div>
+    </div>
+    <div class="hero-foot wrap" data-reveal style="--d:.7s">
+      <span>Частные дома</span><span>Общественные здания</span><span>Реконструкция</span>
+      <span class="hero-hint">Ведите курсором — свет пойдёт за ним</span>
+    </div>
+  </section>
+
+  <section class="manifesto" id="manifesto" data-manifesto>
+    <div class="manifesto-pin">
+      <div class="wrap">
+        <p class="eyebrow">Метод</p>
+        <p class="manifesto-text" data-words>Мы разбираем дом как инженер разбирает механизм: слой за слоем, от плиты фундамента до фальца на кровле. Каждое решение можно показать, посчитать и построить.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="anatomy" id="anatomy" data-anatomy aria-labelledby="anatomy-title">
+    <div class="anatomy-pin">
+      <div class="anatomy-grid wrap">
+        <div class="anatomy-figure">
+          <iframe class="house-frame" data-house data-src="house/house.html?ui=0" title="Интерактивный макет дома: перетащите, чтобы повернуть" loading="lazy"></iframe>
+          <p class="anatomy-hint"><span class="drag-ico" aria-hidden="true"></span>Тяните макет, чтобы повернуть</p>
+        </div>
+        <div class="anatomy-copy">
+          <p class="eyebrow">Анатомия дома</p>
+          <h2 id="anatomy-title" class="h2">Дом 114 м² в&nbsp;пяти слоях</h2>
+          <ol class="layers" data-layers></ol>
+          <div class="anatomy-progress" aria-hidden="true"><span data-anatomy-bar></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects" aria-labelledby="projects-title">
+    <div class="wrap section-head">
+      <p class="eyebrow" data-reveal>Проекты</p>
+      <h2 id="projects-title" class="h2" data-reveal>Объекты, в которых форма следует за&nbsp;светом</h2>
+      <p class="section-note" data-reveal>Карточки ниже — демонстрационные заглушки для макета сайта.</p>
+    </div>
+    <div class="stack wrap" data-stack>
+      <article class="card" data-card>
+        <div class="card-art" data-art="house" data-seed="1"></div>
+        <div class="card-body"><p class="card-index">01</p><h3>Дом у сосен <span class="demo-tag">демо</span></h3><p>Частный дом с консолью второго этажа и террасой под ней.</p><dl><div><dt>Тип</dt><dd>Частный дом</dd></div><div><dt>Площадь</dt><dd>114 м²</dd></div><div><dt>Стадия</dt><dd>АР, КР, ИОС</dd></div></dl></div>
+      </article>
+      <article class="card" data-card>
+        <div class="card-art" data-art="pavilion" data-seed="2"></div>
+        <div class="card-body"><p class="card-index">02</p><h3>Павильон в парке <span class="demo-tag">демо</span></h3><p>Лёгкая кровля на тонких колоннах и сплошное остекление.</p><dl><div><dt>Тип</dt><dd>Общественное здание</dd></div><div><dt>Конструкция</dt><dd>Металлокаркас</dd></div><div><dt>Стадия</dt><dd>Эскиз</dd></div></dl></div>
+      </article>
+      <article class="card" data-card>
+        <div class="card-art" data-art="terrace" data-seed="3"></div>
+        <div class="card-body"><p class="card-index">03</p><h3>Террасы на склоне <span class="demo-tag">демо</span></h3><p>Ступенчатый дом, вписанный в рельеф: каждая кровля — терраса этажа выше.</p><dl><div><dt>Тип</dt><dd>Частный дом</dd></div><div><dt>Уровни</dt><dd>3</dd></div><div><dt>Стадия</dt><dd>Концепция</dd></div></dl></div>
+      </article>
+      <article class="card" data-card>
+        <div class="card-art" data-art="cube" data-seed="4"></div>
+        <div class="card-body"><p class="card-index">04</p><h3>Куб-мастерская <span class="demo-tag">демо</span></h3><p>Один объём, одно большое окно на север и мастерская с двусветным пространством.</p><dl><div><dt>Тип</dt><dd>Мастерская</dd></div><div><dt>Конструкция</dt><dd>CLT</dd></div><div><dt>Стадия</dt><dd>РД</dd></div></dl></div>
+      </article>
+      <article class="card" data-card>
+        <div class="card-art" data-art="barn" data-seed="5"></div>
+        <div class="card-body"><p class="card-index">05</p><h3>Амбар-резиденция <span class="demo-tag">демо</span></h3><p>Реконструкция: старый силуэт, новая оболочка и тёплый контур.</p><dl><div><dt>Тип</dt><dd>Реконструкция</dd></div><div><dt>Фасад</dt><dd>Фальц, дерево</dd></div><div><dt>Стадия</dt><dd>Надзор</dd></div></dl></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="process" id="process" data-process aria-labelledby="process-title">
+    <div class="wrap section-head">
+      <p class="eyebrow" data-reveal>Процесс</p>
+      <h2 id="process-title" class="h2" data-reveal>От эскиза до ключей</h2>
+    </div>
+    <div class="road wrap">
+      <svg class="road-line" viewBox="0 0 10 1000" preserveAspectRatio="none" aria-hidden="true"><path class="road-track" d="M5 0V1000"/><path class="road-fill" d="M5 0V1000" pathLength="1" data-road/></svg>
+      <ol class="road-steps">
+        <li data-step><span class="road-num">01</span><h3>Эскиз</h3><p>Обмеры, анализ участка, инсоляция. Две-три планировочные идеи и объём в 3D.</p></li>
+        <li data-step><span class="road-num">02</span><h3>Проект</h3><p>Архитектурные и конструктивные решения, инженерные системы, смета.</p></li>
+        <li data-step><span class="road-num">03</span><h3>Рабочая документация</h3><p>Узлы, спецификации, раскладки — всё, по чему бригада строит без вопросов.</p></li>
+        <li data-step><span class="road-num">04</span><h3>Авторский надзор</h3><p>Выезды на объект и проверка того, что построено именно то, что спроектировано.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow" data-reveal>Контакты</p>
+        <h2 id="contact-title" class="contact-title" data-split data-reveal>Обсудим ваш дом?</h2>
+        <p class="section-note" data-reveal>Это демо: форма ничего не отправляет. Реальные контакты бюро появятся здесь.</p>
+      </div>
+      <form class="form" data-form data-reveal>
+        <label><span>Имя</span><input name="name" autocomplete="name" required></label>
+        <label><span>Телефон или e-mail</span><input name="contact" autocomplete="email" required></label>
+        <label><span>Задача</span><textarea name="message" rows="3" placeholder="Участок, площадь, сроки"></textarea></label>
+        <button class="btn" type="submit">Отправить заявку</button>
+        <p class="form-note" data-form-note role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© ООО «АДБ Проект-5». Демо-сайт: проекты и тексты — заглушки.</span>
+    <span>Макет дома построен на <a href="https://github.com/wheresryan22/anatomy">Anatomy</a> (MIT) · <a href="variant-b.html">Вариант B</a> · <a href="./">Все варианты</a></span>
+  </div>
+</footer>
+<script type="module" src="scripts/a.js"></script>
+</body>
+</html>

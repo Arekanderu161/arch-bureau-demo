@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>АДБ Проект-5 — демо сайта архитектурного бюро</title>
+<meta name="description" content="Два варианта демо-сайта архитектурного бюро ООО «АДБ Проект-5» и интерактивный макет дома.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Manrope:wght@400;500;600&family=Unbounded:wght@500&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#0d0d0e;color:#ecebe7;font-family:"Manrope",system-ui,sans-serif;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:28px clamp(16px,4vw,48px) 0}
+.brand{font-family:"Unbounded",system-ui,sans-serif;font-size:18px}
+.brand small{font-family:"Manrope",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8b86;margin-left:10px}
+header p{margin:0;color:#8d8b86;font-size:14px}
+h1{font-family:"Unbounded",system-ui,sans-serif;font-weight:500;font-size:clamp(28px,4vw,52px);letter-spacing:-.02em;line-height:1.05;margin:clamp(32px,6vh,72px) clamp(16px,4vw,48px) 28px;max-width:20ch}
+.grid{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,24px);padding:0 clamp(16px,4vw,48px) clamp(16px,4vw,40px)}
+.card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:min(62vh,560px);padding:clamp(22px,3vw,40px);border-radius:24px;overflow:hidden;text-decoration:none;color:inherit;isolation:isolate;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-6px)}
+.card:focus-visible{outline:2px solid #e3a56b;outline-offset:4px}
+.card .art{position:absolute;inset:0;z-index:-1;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.card:hover .art{transform:scale(1.05)}
+.tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.card h2{font-family:"Unbounded",system-ui,sans-serif;font-weight:500;font-size:clamp(28px,3.4vw,48px);letter-spacing:-.02em;margin:10px 0 10px}
+.card p{margin:0;max-width:40ch;opacity:.78}
+.go{margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-weight:600}
+.go::after{content:"→";transition:transform .3s}
+.card:hover .go::after{transform:translateX(6px)}
+.a{background:#0a0a0b;border:1px solid rgba(255,255,255,.1)}
+.a .art{background:radial-gradient(40% 55% at 70% 38%,rgba(227,165,107,.55),transparent 70%),linear-gradient(180deg,#141416,#0a0a0b)}
+.a .art::before,.a .art::after{content:"";position:absolute;background:#ffd7a8;box-shadow:0 0 40px 10px rgba(255,190,120,.55),0 0 120px 40px rgba(227,165,107,.25)}
+.a .art::before{left:calc(62% - 4px);top:12%;width:8px;height:46%}
+.a .art::after{left:calc(62% + 40px);top:18%;width:150px;height:8px}
+.b{background:#f3f1ea;color:#10233a}
+.b .art{background-color:#f3f1ea;background-image:radial-gradient(45% 50% at 72% 35%,rgba(127,184,214,.45),transparent 70%),linear-gradient(rgba(16,35,58,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(16,35,58,.12) 1px,transparent 1px),linear-gradient(rgba(16,35,58,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(16,35,58,.05) 1px,transparent 1px);background-size:auto,110px 110px,110px 110px,22px 22px,22px 22px}
+.b .art::before{content:"";position:absolute;left:62%;top:14%;width:150px;height:150px;border:1.5px solid #cf5427;border-radius:50%}
+.b .art::after{content:"";position:absolute;left:calc(62% + 75px);top:4%;bottom:40%;border-left:1px dashed #cf5427}
+.b .tag,.b p{font-family:"IBM Plex Mono",monospace}
+.b p{font-family:"Manrope",sans-serif}
+.house{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:22px clamp(22px,3vw,40px);border:1px solid rgba(255,255,255,.12);border-radius:24px;text-decoration:none;color:inherit;transition:border-color .3s}
+.house:hover{border-color:#e3a56b}
+.house b{font-family:"Unbounded",sans-serif;font-weight:500;font-size:20px}
+.house span{color:#8d8b86}
+footer{padding:0 clamp(16px,4vw,48px) 28px;color:#8d8b86;font-size:13px}
+footer a{color:#ecebe7}
+@media (max-width:760px){.grid{grid-template-columns:1fr}.card{min-height:46vh}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">АДБ Проект-5<small>архитектурное бюро</small></span>
+  <p>Демо сайта · 2 варианта</p>
+</header>
+<main>
+  <h1>Выберите вариант сайта</h1>
+  <div class="grid">
+    <a class="card a" href="variant-a.html">
+      <span class="art" aria-hidden="true"></span>
+      <span class="tag">Вариант A · тёмный</span>
+      <h2>Монолит</h2>
+      <p>Бетон, туман и луч света в шейдере, который идёт за курсором. Манифест, раскрывающийся при прокрутке, и дом, который раскладывается на слои.</p>
+      <span class="go">Открыть</span>
+    </a>
+    <a class="card b" href="variant-b.html">
+      <span class="art" aria-hidden="true"></span>
+      <span class="tag">Вариант B · светлый</span>
+      <h2>Чертёж</h2>
+      <p>Сетка-синька с линзой и волнами под курсором, штамп листа, выноски к слоям дома, альбом проектов и карусель услуг.</p>
+      <span class="go">Открыть</span>
+    </a>
+    <a class="house" href="house/house.html">
+      <b>Анатомия дома</b>
+      <span>Отдельная страница макета: вращение и разрез на весь экран</span>
+    </a>
+  </div>
+</main>
+<footer>Демо-сайт: проекты и тексты — заглушки. Макет дома построен на <a href="https://github.com/wheresryan22/anatomy">Anatomy</a> (MIT).</footer>
+</body>
+</html>

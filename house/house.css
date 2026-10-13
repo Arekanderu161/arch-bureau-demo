@@ -1,0 +1,22 @@
+
+html,body{margin:0;height:100%;background:transparent}
+.hx{--hx-glass:#1d2a33;--hx-glint:#9fd3ff;--hx-pipe:#e0794a;--hx-solar:#14202c;--hx-lawn:#25301f;--hx-ui:#e6e6e6;--hx-ui-dim:#8a8a8a;--hx-track:#3a3a3a;--hx-accent:#d9a066;background:transparent;font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+.hx[data-theme="light"]{--hx-glass:#bcd2dd;--hx-glint:#ffffff;--hx-pipe:#c4552a;--hx-solar:#2b3d52;--hx-lawn:#cfd9c2;--hx-ui:#1b1b19;--hx-ui-dim:#6b6b66;--hx-track:#cfcfc8;--hx-accent:#a8642a}
+.hx[data-standalone]{background:var(--anatomy-page)}
+.hx-main{position:relative;box-sizing:border-box;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px}
+.hx-stage{position:relative;width:min(100%,calc((100vh - 64px)));aspect-ratio:1/1;cursor:grab;touch-action:pan-y;transform-origin:50% 78%;will-change:transform;outline:none;user-select:none;-webkit-user-select:none}
+.hx[data-ui="0"] .hx-stage{width:min(100%,calc(100vh - 16px))}
+.hx-stage[data-drag]{cursor:grabbing}
+.hx-stage:focus-visible{outline:1px dashed var(--hx-accent);outline-offset:6px;border-radius:8px}
+.hx-stage>.iso-svg{position:absolute;inset:0;width:100%;height:100%}
+.hx-glass{fill:var(--hx-glass);stroke:none}
+.hx-glint{fill:none;stroke:var(--hx-glint);stroke-width:.8px;opacity:.55;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.hx-pipe{fill:none;stroke:var(--hx-pipe);stroke-width:1.1px;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.hx-solar{fill:var(--hx-solar);stroke:none}
+.hx-lawn .iso-top,.hx-lawn .iso-fill{fill:var(--hx-lawn)}
+.hx-ui{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:6px;color:var(--hx-ui);font-size:13px;letter-spacing:.02em}
+.hx[data-ui="0"] .hx-ui{display:none}
+.hx-cut{display:flex;align-items:center;gap:10px;text-transform:uppercase;font-size:11px;letter-spacing:.16em;color:var(--hx-ui-dim)}
+.hx-cut input{width:180px;accent-color:var(--hx-accent)}
+.hx-readout{font-family:ui-monospace,"JetBrains Mono",Menlo,monospace;font-size:12px;color:var(--hx-ui-dim);min-width:22ch;text-align:center}
+@media (max-width:520px){.hx-cut input{width:130px}}
