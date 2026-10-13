@@ -44,7 +44,7 @@ const SUITES = {
     ]`,
   },
 };
-const FALLBACK = `[["eval", "(() => { ${assert} assert(document.querySelector('.hero').hasAttribute('data-gl-off'), 'no WebGL fallback flag'); return 'fallback ok'; })()"]]`;
+const FALLBACK = `[["until", "document.querySelector('.hero').hasAttribute('data-gl-off') && !document.querySelector('.hero').hasAttribute('data-gl')", 15000], ["eval", "'fallback ok'"]]`;
 
 let failed = 0;
 const run = (name, url, actions, extra = []) => {
